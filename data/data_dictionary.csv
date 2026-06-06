@@ -1,0 +1,28 @@
+Dataset,Colonne,Type,Description,Valeurs possibles,Source
+orders,order_id,string,ID unique de commande (PK),UUID,olist_orders
+orders,customer_id,string,ID client (FK vers customers),UUID,olist_orders
+orders,order_status,string,Statut de la commande,"delivered, shipped, canceled, ...",olist_orders
+orders,order_purchase_timestamp,datetime,Date/heure d'achat,YYYY-MM-DD HH:MM:SS,olist_orders
+orders,order_approved_at,datetime,Date approbation paiement,YYYY-MM-DD HH:MM:SS,olist_orders
+orders,order_delivered_carrier_date,datetime,Date remise au transporteur,YYYY-MM-DD HH:MM:SS,olist_orders
+orders,order_delivered_customer_date,datetime,Date livraison réelle,YYYY-MM-DD HH:MM:SS,olist_orders
+orders,order_estimated_delivery_date,datetime,Date livraison estimée,YYYY-MM-DD HH:MM:SS,olist_orders
+order_items,order_id,string,Référence commande (FK),UUID,olist_order_items
+order_items,order_item_id,integer,Numéro de ligne dans la commande,1..N,olist_order_items
+order_items,product_id,string,ID produit (FK),UUID,olist_order_items
+order_items,seller_id,string,ID vendeur (FK),UUID,olist_order_items
+order_items,price,float,Prix unitaire (BRL),>0,olist_order_items
+order_items,freight_value,float,Coût de livraison (BRL),>=0,olist_order_items
+order_payments,order_id,string,Référence commande (FK),UUID,olist_order_payments
+order_payments,payment_sequential,integer,Ordre du paiement (si multiple),1..N,olist_order_payments
+order_payments,payment_type,string,Mode de paiement,"credit_card, boleto, voucher, debit_card",olist_order_payments
+order_payments,payment_installments,integer,Nombre de mensualités,1..24,olist_order_payments
+order_payments,payment_value,float,Montant payé (BRL),>0,olist_order_payments
+order_reviews,review_score,integer,Note satisfaction client,1 à 5,olist_order_reviews
+order_reviews,review_comment_title,string,Titre du commentaire,Texte libre,olist_order_reviews
+order_reviews,review_comment_message,string,Corps du commentaire,Texte libre,olist_order_reviews
+customers,customer_id,string,ID client par commande (PK),UUID,olist_customers
+customers,customer_unique_id,string,ID client unique (personne physique),UUID,olist_customers
+customers,customer_zip_code_prefix,string,Code postal (5 chiffres),5 digits,olist_customers
+customers,customer_city,string,Ville,Texte,olist_customers
+customers,customer_state,string,État brésilien (2 lettres),"SP, RJ, ...",olist_customers

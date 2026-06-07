@@ -1,5 +1,17 @@
+<<<<<<< HEAD
 streamlit>=1.28.0
 pandas>=2.0.0
 numpy>=1.24.0
 plotly>=5.17.0
 scikit-learn>=1.3.0
+=======
+pandas>=1.5.0
+numpy>=1.23.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+scikit-learn>=1.2.0
+xgboost>=1.7.0
+shap>=0.41.0
+imbalanced-learn>=0.10.0
+joblib>=1.2.0
+>>>>>>> a972d35c668de2dabc8e291631dc536eddb849fd
